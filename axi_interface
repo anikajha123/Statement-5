@@ -1,0 +1,18 @@
+
+module axi_interface(
+input clk,
+input rst,
+input [7:0] data_in,
+input start,
+output [15:0] result,
+output done
+);
+conv_accelerator conv_inst(
+.clk(clk),
+.rst(rst),
+.start(start),
+.pixel_in(data_in),
+.result(result),
+.done(done)
+);
+endmodule
